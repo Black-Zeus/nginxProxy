@@ -41,6 +41,7 @@
 
     .page {
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       flex-direction: column;
     }
@@ -104,11 +105,10 @@
     .hero-inner {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 58px 28px 70px;
-      display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      gap: 34px;
-      align-items: center;
+      padding: 36px 28px 52px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
     }
 
     h1 {
@@ -118,125 +118,25 @@
       letter-spacing: -0.04em;
     }
 
-    .hero-description {
-      margin: 18px 0 0;
-      max-width: 760px;
-      color: #dbe7f6;
-      font-size: 17px;
-      line-height: 1.75;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 800;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-    }
-
-    .btn-primary {
-      color: #ffffff;
-      background: linear-gradient(135deg, var(--itop-orange), var(--itop-orange-dark));
-      box-shadow: 0 14px 28px rgba(242, 140, 40, 0.28);
-    }
-
-    .btn-secondary {
-      color: #e0f2fe;
-      border: 1px solid rgba(219, 234, 254, 0.34);
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-panel {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(219, 234, 254, 0.2);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.18);
-      backdrop-filter: blur(10px);
-    }
-
-    .panel-title {
-      margin: 0 0 18px;
-      font-size: 15px;
-      color: #e0f2fe;
-      font-weight: 800;
-    }
-
-    .status-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .status-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 13px 14px;
-      border-radius: 14px;
-      background: rgba(15, 31, 56, 0.42);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .status-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--itop-cyan);
-      box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.12);
-      flex: 0 0 auto;
-    }
-
-    .status-dot.orange {
-      background: var(--itop-orange);
-      box-shadow: 0 0 0 5px rgba(242, 140, 40, 0.14);
-    }
-
-    .status-text strong {
-      display: block;
-      font-size: 13px;
-      color: #ffffff;
-    }
-
-    .status-text span {
-      display: block;
-      margin-top: 2px;
-      color: #b8c7dc;
-      font-size: 12px;
-      line-height: 1.4;
-    }
-
     main {
       flex: 1;
       max-width: 1180px;
       width: 100%;
       margin: -34px auto 0;
-      padding: 0 28px 54px;
+      padding: 0 28px 24px;
       position: relative;
       z-index: 2;
+      display: flex;
+      align-items: center;
     }
 
     .section-card {
+      width: 100%;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 24px;
       box-shadow: var(--shadow);
-      padding: 28px;
+      padding: 22px;
     }
 
     .section-header {
@@ -275,9 +175,12 @@
       border-radius: var(--radius);
       padding: 26px;
       background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-      min-height: 295px;
+      min-height: 270px;
       display: flex;
       flex-direction: column;
+      color: inherit;
+      cursor: pointer;
+      text-decoration: none;
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
@@ -285,6 +188,11 @@
       transform: translateY(-4px);
       border-color: #b7c7de;
       box-shadow: 0 18px 40px rgba(15, 31, 56, 0.12);
+    }
+
+    .module-card:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.38);
+      outline-offset: 4px;
     }
 
     .module-card::after {
@@ -415,166 +323,91 @@
       background: #16a34a;
     }
 
-    .module-link {
+    .module-action {
       position: relative;
       z-index: 1;
+      align-self: center;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: fit-content;
-      min-height: 44px;
-      padding: 0 16px;
+      min-height: 40px;
+      padding: 0 18px;
       border-radius: 12px;
       color: #ffffff;
       background: var(--itop-navy);
-      text-decoration: none;
-      font-weight: 800;
       font-size: 14px;
-      transition: background 0.2s ease, transform 0.2s ease;
+      font-weight: 800;
+      line-height: 1;
     }
 
-    .module-link:hover {
-      background: #223e6c;
-      transform: translateY(-1px);
-    }
-
-    .module-card.hub .module-link {
+    .module-card.hub .module-action {
       background: var(--itop-orange-dark);
     }
 
-    .module-card.hub .module-link:hover {
-      background: #b9560e;
-    }
-
-    .module-card.talos .module-link {
+    .module-card.talos .module-action {
       background: #0f766e;
     }
 
-    .module-card.talos .module-link:hover {
-      background: #115e59;
-    }
-
-    .info-strip {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 14px;
-    }
-
-    .info-box {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #ffffff;
-      padding: 18px;
-    }
-
-    .info-box strong {
-      display: block;
-      font-size: 13px;
-      color: #111827;
-      margin-bottom: 6px;
-    }
-
-    .info-box span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
     footer {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.92);
       border-top: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
 
     .footer-inner {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 24px 28px;
-      display: grid;
-      gap: 18px;
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    .footer-title {
+    .footer-copy {
       margin: 0;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      line-height: 1.4;
       color: #475569;
     }
 
-    .footer-organizations {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .footer-org-card {
-      min-height: 178px;
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: #fafbfc;
+    .footer-logos {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      gap: 16px;
-      text-align: center;
+      justify-content: flex-end;
+      gap: 14px;
+      flex: 0 0 auto;
     }
 
-    .footer-logo-box {
-      width: 100%;
-      min-height: 86px;
-      padding: 16px 18px;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      background: #f3f4f6;
+    .footer-logo-item {
+      height: 34px;
+      min-width: 92px;
+      padding: 5px 10px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .footer-logo-box.logo-dark {
-      background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    .footer-logo-item.logo-dark {
+      background: #111827;
       border-color: #334155;
     }
 
     .footer-logo {
       display: block;
       max-width: 100%;
-      max-height: 54px;
+      max-height: 22px;
       width: auto;
       height: auto;
       object-fit: contain;
     }
 
     .footer-logo.logo-wide {
-      max-height: 48px;
-    }
-
-    .footer-org-copy {
-      display: grid;
-      gap: 5px;
-      width: 100%;
-    }
-
-    .footer-org-name {
-      margin: 0;
-      color: #111827;
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1.35;
-    }
-
-    .footer-org-role {
-      margin: 5px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
+      max-height: 18px;
     }
 
     @media (max-width: 900px) {
@@ -583,8 +416,7 @@
         padding-bottom: 58px;
       }
 
-      .cards,
-      .info-strip {
+      .cards {
         grid-template-columns: 1fr;
       }
 
@@ -597,13 +429,6 @@
         padding-right: 18px;
       }
 
-      .footer-organizations {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-org-card {
-        min-height: 140px;
-      }
     }
 
     @media (max-width: 640px) {
@@ -625,20 +450,15 @@
         padding: 22px;
       }
 
-      .hero-actions {
+      .footer-inner {
         flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
       }
 
       .footer-logos {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-logo-card {
-        min-height: 84px;
+        justify-content: center;
       }
     }
   </style>
@@ -646,96 +466,20 @@
 
 <body>
   <div class="page">
-    <div class="topbar">
-      <div class="topbar-inner">
-        <div class="brand">
-          <div class="brand-mark">iT</div>
-          <div>
-            <p class="brand-title">Portal Operacional iTop</p>
-            <p class="brand-subtitle">Integraciones · Automatizaciones · ITSM · CMDB</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <header class="hero">
       <div class="hero-inner">
-        <div class="footer-org-copy">
+        <div>
           <h1>Plataforma de Integración ITSM/CMDB iTop</h1>
-          <p class="hero-description">
-            Punto de entrada centralizado para acceder a la consola principal de Combodo iTop
-            y al portal complementario iTop-Hub, utilizado para procesos de integración,
-            trazabilidad operacional, automatización y gestión de activos.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="/itop/">
-              Ingresar a iTop
-            </a>
-            <a class="btn btn-secondary" href="/itop-hub/">
-              Ingresar a iTop-Hub
-            </a>
-            <a class="btn btn-secondary" href="/talos/">
-              Ingresar a TALOS
-            </a>
-          </div>
         </div>
-
-        <aside class="hero-panel" aria-label="Resumen de plataforma">
-          <p class="panel-title">Componentes publicados</p>
-
-          <div class="status-list">
-            <div class="status-item">
-              <span class="status-dot"></span>
-              <div class="status-text">
-                <strong>Consola ITSM/CMDB</strong>
-                <span>Gestión de tickets, CIs, contactos, organizaciones y servicios.</span>
-              </div>
-            </div>
-
-            <div class="status-item">
-              <span class="status-dot orange"></span>
-              <div class="status-text">
-                <strong>Portal de Integraciones</strong>
-                <span>Automatizaciones, actas, reportes y procesos operacionales extendidos.</span>
-              </div>
-            </div>
-
-            <div class="status-item">
-              <span class="status-dot"></span>
-              <div class="status-text">
-                <strong>Publicación controlada</strong>
-                <span>Acceso centralizado a módulos internos de operación.</span>
-              </div>
-            </div>
-
-            <div class="status-item">
-              <span class="status-dot orange"></span>
-              <div class="status-text">
-                <strong>TALOS</strong>
-                <span>Sistema para gestión y registro de inspecciones.</span>
-              </div>
-            </div>
-          </div>
-        </aside>
       </div>
     </header>
 
     <main>
       <section class="section-card">
-        <div class="section-header">
-          <div>
-            <h2>Accesos principales</h2>
-            <p>
-              Seleccione el componente requerido según la operación que necesita ejecutar.
-              Los módulos pueden estar sujetos a autenticación, perfiles de acceso y permisos
-              definidos por la organización.
-            </p>
-          </div>
-        </div>
 
         <div class="cards" aria-label="Accesos principales de la plataforma">
-          <article class="module-card">
+          <a class="module-card" href="/itop/" title="Ingresar a Combodo iTop">
             <div class="module-top">
               <div class="module-icon">iTop</div>
               <span class="module-tag">Core ITSM</span>
@@ -754,12 +498,10 @@
               <li>Relaciones CMDB y trazabilidad operacional</li>
             </ul>
 
-            <a class="module-link" href="/itop/" title="Ingresar a Combodo iTop">
-              Abrir iTop
-            </a>
-          </article>
+            <span class="module-action">Acceder</span>
+          </a>
 
-          <article class="module-card hub">
+          <a class="module-card hub" href="/itop-hub/" title="Ingresar a iTop-Hub">
             <div class="module-top">
               <div class="module-icon">Hub</div>
               <span class="module-tag">Integración</span>
@@ -778,12 +520,10 @@
               <li>Integración con flujos externos y servicios auxiliares</li>
             </ul>
 
-            <a class="module-link" href="/itop-hub/" title="Ingresar a iTop-Hub">
-              Abrir iTop-Hub
-            </a>
-          </article>
+            <span class="module-action">Acceder</span>
+          </a>
 
-          <article class="module-card talos">
+          <a class="module-card talos" href="/talos/" title="Ingresar a TALOS">
             <div class="module-top">
               <div class="module-icon">T</div>
               <span class="module-tag">Inspecciones</span>
@@ -802,67 +542,26 @@
               <li>Experiencia operativa en construccion</li>
             </ul>
 
-            <a class="module-link" href="/talos/" title="Ingresar a TALOS">
-              Abrir TALOS
-            </a>
-          </article>
-        </div>
-
-        <div class="info-strip" aria-label="Información operacional">
-          <div class="info-box">
-            <strong>Propósito</strong>
-            <span>Centralizar el acceso a los servicios publicados de la plataforma iTop.</span>
-          </div>
-
-          <div class="info-box">
-            <strong>Alcance</strong>
-            <span>Operación ITSM, CMDB, integraciones, automatización y trazabilidad.</span>
-          </div>
-
-          <div class="info-box">
-            <strong>Acceso</strong>
-            <span>El ingreso puede requerir autenticación y permisos previamente autorizados.</span>
-          </div>
+            <span class="module-action">Acceder</span>
+          </a>
         </div>
       </section>
     </main>
-
     <footer>
-  <div class="footer-inner">
+      <div class="footer-inner">
+        <p class="footer-copy">Portal operacional iTop para Gold Fields Chile. Implementacion y soporte Tecnocomp.</p>
 
-    <div class="footer-organizations" aria-label="Organizaciones asociadas">
-      <section class="footer-org-card" aria-label="Tecnocomp Computación LTDA">
-        <div class="footer-logo-box">
-          <img
-            class="footer-logo"
-            src="assets/tc_logo.png"
-            alt="Tecnocomp Computación LTDA"
-          />
-        </div>
+        <div class="footer-logos" aria-label="Organizaciones asociadas">
+          <span class="footer-logo-item">
+            <img class="footer-logo" src="assets/tc_logo.png" alt="Tecnocomp" />
+          </span>
 
-        <div class="footer-org-copy">
-          <p class="footer-org-name">Tecnocomp Computación LTDA</p>
-          <p class="footer-org-role">Provisto por</p>
+          <span class="footer-logo-item logo-dark">
+            <img class="footer-logo logo-wide" src="assets/gf_logo.svg" alt="Gold Fields Chile" />
+          </span>
         </div>
-      </section>
-
-      <section class="footer-org-card" aria-label="Minera GoldFields Chile">
-        <div class="footer-logo-box logo-dark">
-          <img
-            class="footer-logo logo-wide"
-            src="assets/gf_logo.svg"
-            alt="Minera GoldFields Chile"
-          />
-        </div>
-
-        <div>
-          <p class="footer-org-name">Minera GoldFields Chile</p>
-          <p class="footer-org-role">Presentado para</p>
-        </div>
-      </section>
-    </div>
-  </div>
-</footer>
+      </div>
+    </footer>
   </div>
 </body>
 
