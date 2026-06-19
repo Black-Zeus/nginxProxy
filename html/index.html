@@ -164,7 +164,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
     }
 
@@ -210,10 +210,6 @@
       background: rgba(242, 140, 40, 0.14);
     }
 
-    .module-card.talos::after {
-      background: rgba(34, 197, 94, 0.13);
-    }
-
     .module-top {
       display: flex;
       align-items: center;
@@ -243,11 +239,6 @@
       box-shadow: 0 14px 28px rgba(242, 140, 40, 0.25);
     }
 
-    .module-card.talos .module-icon {
-      background: linear-gradient(135deg, #0f766e, #22c55e);
-      box-shadow: 0 14px 28px rgba(15, 118, 110, 0.24);
-    }
-
     .module-tag {
       font-size: 11px;
       font-weight: 900;
@@ -262,11 +253,6 @@
     .module-card.hub .module-tag {
       background: var(--soft-orange);
       color: #9a4a0d;
-    }
-
-    .module-card.talos .module-tag {
-      background: #dcfce7;
-      color: #166534;
     }
 
     .module-card h3 {
@@ -319,10 +305,6 @@
       background: var(--itop-orange);
     }
 
-    .module-card.talos .feature-list li::before {
-      background: #16a34a;
-    }
-
     .module-action {
       position: relative;
       z-index: 1;
@@ -342,10 +324,6 @@
 
     .module-card.hub .module-action {
       background: var(--itop-orange-dark);
-    }
-
-    .module-card.talos .module-action {
-      background: #0f766e;
     }
 
     footer {
@@ -523,27 +501,6 @@
             <span class="module-action">Acceder</span>
           </a>
 
-          <a class="module-card talos" href="/talos/" title="Ingresar a TALOS">
-            <div class="module-top">
-              <div class="module-icon">T</div>
-              <span class="module-tag">Inspecciones</span>
-            </div>
-
-            <h3>TALOS</h3>
-            <p>
-              Plataforma orientada a digitalizar, ordenar y dar seguimiento a los
-              procesos de inspeccion. TALOS facilitara el registro, control y
-              trazabilidad de inspecciones operacionales desde un punto centralizado.
-            </p>
-
-            <ul class="feature-list">
-              <li>Registro estructurado de inspecciones</li>
-              <li>Seguimiento de hallazgos y estados</li>
-              <li>Experiencia operativa en construccion</li>
-            </ul>
-
-            <span class="module-action">Acceder</span>
-          </a>
         </div>
       </section>
     </main>
