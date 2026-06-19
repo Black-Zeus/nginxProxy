@@ -4,3 +4,4 @@
 logs/
 tmp/
 *.bak
+nginx/certs/
